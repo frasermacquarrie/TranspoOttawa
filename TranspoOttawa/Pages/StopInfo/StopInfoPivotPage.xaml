@@ -1,0 +1,58 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TranspoOttawa.Pages.StopInfo.PivotPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid x:Name="StopInfoProgressPanel" Visibility="Collapsed">
+            <TextBlock x:Name="StopInfoProgressText" Text="Loading Stop Data" Margin="10,340,10,393" HorizontalAlignment="Center" Width="460" TextAlignment="Center" />
+            <ProgressBar x:Name="StopInfoProgress" IsIndeterminate="True"/>
+        </Grid>
+        
+
+        
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="StopInfoPivot" Title="MY APPLICATION" FontSize="20" >
+            <!--Pivot item two-->
+            <phone:PivotItem Header="quick">
+                <ScrollViewer x:Name="quickViewer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
+                    <StackPanel x:Name="quickStack">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <!--Pivot item one-->
+            <phone:PivotItem Header="next">
+                <ScrollViewer x:Name="nextViewer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
+                    <StackPanel x:Name="nextStack">
+                        
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="routes" >
+                <ScrollViewer x:Name="routeViewer" HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
+                    <StackPanel x:Name="routeStack">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>
